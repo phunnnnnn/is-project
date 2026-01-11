@@ -7,10 +7,10 @@ script = ExtResource("1_snyqv")
 
 [node name="ButtonPlay" type="Button" parent="."]
 unique_name_in_owner = true
-offset_left = 682.0
-offset_top = 424.0
-offset_right = 856.0
-offset_bottom = 590.0
+offset_left = 337.0
+offset_top = 342.0
+offset_right = 790.0
+offset_bottom = 584.0
 text = "Play
 "
 
