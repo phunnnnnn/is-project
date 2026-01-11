@@ -1,0 +1,263 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqow47bch5ocs"]
+
+[ext_resource type="Script" uid="uid://blyusjbdydqg5" path="res://scripts/script-main.gd" id="1_tjsji"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_tjsji")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="lableQuestion" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 569.0
+offset_top = 44.0
+offset_right = 1135.0
+offset_bottom = 181.0
+theme_override_font_sizes/font_size = 100
+text = "? + ? = ?"
+horizontal_alignment = 1
+
+[node name="lableOutput" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 803.0
+offset_top = 199.0
+offset_right = 1105.0
+offset_bottom = 336.0
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
+[node name="lablePoint" type="Label" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 76.0
+offset_top = 40.0
+offset_right = 378.0
+offset_bottom = 177.0
+theme_override_font_sizes/font_size = 100
+text = "?/?"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 417.0
+offset_right = 1146.0
+offset_bottom = 517.0
+
+[node name="ButtonOne" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "1"
+
+[node name="ButtonTwo" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "2"
+
+[node name="ButtonThree" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "3"
+
+[node name="ButtonFour" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "4"
+
+[node name="ButtonFive" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "5"
+
+[node name="ButtonSix" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "6"
+
+[node name="ButtonSeven" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "7"
+
+[node name="ButtonEight" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "8"
+
+[node name="ButtonNine" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "9"
+
+[node name="ButtonZero" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "0"
+
+[node name="ButtonErase" type="Button" parent="Control/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "X"
+
+[node name="GridFirst" type="GridContainer" parent="Control"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 122.0
+offset_top = 203.0
+offset_right = 388.0
+offset_bottom = 307.0
+columns = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="Control/GridFirst"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="GridSecond" type="GridContainer" parent="Control"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 0
+offset_left = 510.0
+offset_top = 206.0
+offset_right = 776.0
+offset_bottom = 310.0
+columns = 5
+
+[node name="ColorRect" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect5" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect6" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect7" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect8" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect9" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect10" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Control/GridSecond"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="ButtonSubmit" type="Button" parent="."]
+offset_left = 26.0
+offset_top = 538.0
+offset_right = 1138.0
+offset_bottom = 629.0
+text = "submit"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0

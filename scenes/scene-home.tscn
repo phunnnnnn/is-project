@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjscqmqx6m81p"]
+
+[ext_resource type="Script" uid="uid://dsqs0brdojv2k" path="res://scenes/script-home.gd" id="1_snyqv"]
+
+[node name="home" type="Node2D"]
+script = ExtResource("1_snyqv")
+
+[node name="ButtonPlay" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 682.0
+offset_top = 424.0
+offset_right = 856.0
+offset_bottom = 590.0
+text = "Play
+"
+
+[node name="ButtonPlayEasy" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 903.0
+offset_top = 62.0
+offset_right = 1077.0
+offset_bottom = 151.0
+text = "Easy"
+
+[node name="ButtonPlayNormal" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 902.0
+offset_top = 178.0
+offset_right = 1076.0
+offset_bottom = 258.0
+text = "Normal"
+
+[node name="ButtonPlayHard" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 907.0
+offset_top = 292.0
+offset_right = 1081.0
+offset_bottom = 379.0
+text = "Hard"
+
+[node name="ButtonPlayNightmare" type="Button" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 907.0
+offset_top = 417.0
+offset_right = 1081.0
+offset_bottom = 514.0
+text = "Nightmare"
