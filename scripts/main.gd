@@ -28,11 +28,12 @@ extends Node2D
 @onready var gridLeft: GridContainer = %GridFirst
 @onready var gridRight: GridContainer = %GridSecond
 
+@onready var btnBackToMenu: Button = %ButtonBackToMenu
 
 # ==================================================
 # CONSTANTS
 # ==================================================
-const SCENE_HOME := "res://scenes/scene-home.tscn"
+const SCENE_HOME := "res://scenes/menu.tscn"
 
 
 # ==================================================
@@ -52,16 +53,25 @@ var playerAnswerText: String = ""
 var lastFirstNumber: int = -1
 var lastSecondNumber: int = -1
 
+var questionsLimit: int = 10   # ผู้เล่นเลือกได้
+var answeredCount: int = 0
+
+var gameMode: Global.GameMode
 
 # ==================================================
 # LIFECYCLE
 # ==================================================
 func _ready() -> void:
-	_reset_game_state()
 	_connect_buttons()
-	_generate_question()
-
-
+	start_game(Global.game_mode, Global.question_limit)
+	
+	if Global.game_mode == Global.GameMode.ENDLESS:
+		btnBackToMenu.visible = true
+	else:
+		btnBackToMenu.visible = false
+	
+	btnBackToMenu.pressed.connect(_on_back_button_pressed)
+	
 # ==================================================
 # INITIAL SETUP
 # ==================================================
@@ -134,29 +144,29 @@ func _generate_question() -> void:
 	var a: int
 	var b: int
 
-	match Globle.difficulty:
-		"play", "easy":
+	match Global.difficulty:
+		Global.Difficulty.PLAY, Global.Difficulty.EASY:
 			while true:
 				a = randi_range(1, 9)
 				b = randi_range(1, 9)
 				if a + b < 10 and _is_new_question(a, b):
 					break
 
-		"normal":
+		Global.Difficulty.NORMAL:
 			while true:
 				a = randi_range(10, 50)
 				b = randi_range(1, 30)
 				if (a % 10 + b % 10) < 10 and _is_new_question(a, b):
 					break
 
-		"hard":
+		Global.Difficulty.HARD:
 			while true:
 				a = randi_range(10, 40)
 				b = randi_range(1, 20)
 				if (a % 10 + b % 10) >= 10 and (a + b) <= 50 and _is_new_question(a, b):
 					break
 
-		"nightmare":
+		Global.Difficulty.NIGHTMARE:
 			while true:
 				a = randi_range(10, 90)
 				b = randi_range(1, 30)
@@ -207,10 +217,13 @@ func _on_submit_pressed() -> void:
 		labelAnswer.text = "กรุณากรอกคำตอบ"
 		return
 
+	answeredCount += 1
+
 	if int(playerAnswerText) == correctAnswer:
 		_on_correct_answer()
 	else:
 		_on_wrong_answer()
+
 
 
 # ==================================================
@@ -221,19 +234,31 @@ func _on_correct_answer() -> void:
 	totalCorrect += 1
 
 	labelAnswer.text = "ถูกต้อง!"
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.4).timeout
 
-	if correctCount >= questionsToClear:
-		_finish_game()
-	else:
-		_generate_question()
+	if gameMode == Global.GameMode.DEFAULT:
+		if answeredCount >= questionsLimit:
+			_finish_game()
+			return
+
+	_generate_question()
+	_update_point_label()
+
 
 
 func _on_wrong_answer() -> void:
 	labelAnswer.text = "ผิด!"
 	playerAnswerText = ""
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(0.4).timeout
+
+	if gameMode == Global.GameMode.DEFAULT:
+		if answeredCount >= questionsLimit:
+			_finish_game()
+			return
+
 	labelAnswer.text = ""
+	_generate_question()
+
 
 
 # ==================================================
@@ -248,8 +273,30 @@ func _finish_game() -> void:
 
 
 func _update_point_label() -> void:
-	var stars := ""
-	for i in range(questionsToClear):
-		stars += "⭐" if i < correctCount else "☆"
+	if gameMode == Global.GameMode.ENDLESS:
+		labelPoint.text = "คะแนน: %d" % totalCorrect
+		return
 
-	labelPoint.text = "%s  (%d / %d)" % [stars, correctCount, questionsToClear]
+	# DEFAULT MODE
+	labelPoint.text = "%d / %d" % [answeredCount, questionsLimit]
+
+
+func start_game(mode: Global.GameMode, limit: int = 10) -> void:
+	gameMode = mode
+	questionsLimit = limit
+
+	answeredCount = 0
+	correctCount = 0
+	totalCorrect = 0
+
+	_clear_grid(gridLeft)
+	_clear_grid(gridRight)
+
+	_generate_question()
+	_update_point_label()
+	
+	
+
+func _on_back_button_pressed():
+	_reset_game_state()
+	get_tree().change_scene_to_file("res://scenes/Menu.tscn")

@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://cqow47bch5ocs"]
 
-[ext_resource type="Script" uid="uid://blyusjbdydqg5" path="res://scripts/script-main.gd" id="1_tjsji"]
+[ext_resource type="Script" uid="uid://blyusjbdydqg5" path="res://scripts/main.gd" id="1_uwrxv"]
 
 [node name="main" type="Node2D"]
-script = ExtResource("1_tjsji")
+script = ExtResource("1_uwrxv")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -249,6 +249,15 @@ layout_mode = 2
 [node name="ColorRect3" type="ColorRect" parent="Control/GridSecond"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
+
+[node name="ButtonBackToMenu" type="Button" parent="Control"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1028.0
+offset_top = 9.0
+offset_right = 1142.0
+offset_bottom = 68.0
+text = "back to menu"
 
 [node name="ButtonSubmit" type="Button" parent="."]
 offset_left = 26.0

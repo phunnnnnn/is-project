@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjscqmqx6m81p"]
+
+[ext_resource type="Script" uid="uid://dsqs0brdojv2k" path="res://scripts/menu.gd" id="1_yqeox"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_yqeox")
+
+[node name="ButtonPlay" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 917.0
+offset_top = 492.0
+offset_right = 1112.0
+offset_bottom = 615.0
+text = "Play"
+
+[node name="ButtonEndless" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 723.0
+offset_top = 100.0
+offset_right = 947.0
+offset_bottom = 235.0
+text = "Endless"
+
+[node name="ButtonDefault" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 254.0
+offset_top = 107.0
+offset_right = 460.0
+offset_bottom = 234.0
+text = "Default"
+
+[node name="ButtonEasy" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 229.0
+offset_top = 302.0
+offset_right = 386.0
+offset_bottom = 410.0
+text = "Easy"
+
+[node name="ButtonNormal" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 411.0
+offset_top = 305.0
+offset_right = 568.0
+offset_bottom = 413.0
+text = "Normal"
+
+[node name="ButtonHard" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 595.0
+offset_top = 302.0
+offset_right = 752.0
+offset_bottom = 410.0
+text = "Hard"
+
+[node name="ButtonNightmare" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 785.0
+offset_top = 302.0
+offset_right = 942.0
+offset_bottom = 410.0
+text = "Nightmare"
